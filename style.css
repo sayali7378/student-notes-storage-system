@@ -1,0 +1,127 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    color: #333;
+}
+
+header {
+    background: #173b63;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #173b63;
+    margin-bottom: 18px;
+}
+
+.subject-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+button {
+    background: #1769aa;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #104b7a;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 18px 0;
+    max-width: 100%;
+}
+
+#notesList p {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#notesList a {
+    color: #1769aa;
+    text-decoration: none;
+}
+
+#notesList a:hover {
+    text-decoration: underline;
+}
+
+.upload-section p {
+    margin-bottom: 10px;
+}
+
+#uploadStatus {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background: #173b63;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .subject-buttons button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notes Storage System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Notes Storage System</h1>
+        <p>Store, search and download your study notes using AWS Cloud</p>
+    </header>
+
+    <main>
+
+        <section class="subjects-section">
+            <h2>Select Subject</h2>
+
+            <div class="subject-buttons">
+                <button onclick="showNotes('DevOps')">DevOps</button>
+
+                <button onclick="showNotes('Deep Learning')">
+                    Deep Learning
+                </button>
+
+                <button onclick="showNotes('Industrial 4.0')">
+                    Industrial 4.0
+                </button>
+
+                <button onclick="showNotes('Cyber Security')">
+                    Cyber Security
+                </button>
+
+                <button onclick="showNotes('Data Science')">
+                    Data Science
+                </button>
+            </div>
+        </section>
+
+        <section class="notes-section">
+            <h2>Available Notes</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search notes by filename..."
+                oninput="searchNotes()"
+            >
+
+            <div id="notesList">
+                <p>Select a subject to view available notes.</p>
+            </div>
+        </section>
+
+        <section class="upload-section">
+            <h2>Upload Study Notes</h2>
+
+            <p>Select a subject first, then choose your PDF file.</p>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp"
+            >
+
+            <button
+                id="uploadButton"
+                onclick="uploadNotes()"
+            >
+                Upload PDF
+            </button>
+
+            <p id="uploadStatus"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Notes Storage System | Powered by AWS Cloud</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

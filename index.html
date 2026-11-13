@@ -1,15 +1,31 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Notes Storage System</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA Settings -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description"
+        content="Store, search and download your study notes using AWS Cloud.">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- App Icon -->
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
+    <!-- Header -->
     <header>
         <h1>Student Notes Storage System</h1>
         <p>Store, search and download your study notes using AWS Cloud</p>
@@ -17,31 +33,40 @@
 
     <main>
 
+        <!-- Subject Selection -->
         <section class="subjects-section">
+
             <h2>Select Subject</h2>
 
             <div class="subject-buttons">
-                <button onclick="showNotes('DevOps')">DevOps</button>
 
-                <button onclick="showNotes('Deep Learning')">
+                <button type="button" onclick="showNotes('DevOps')">
+                    DevOps
+                </button>
+
+                <button type="button" onclick="showNotes('Deep Learning')">
                     Deep Learning
                 </button>
 
-                <button onclick="showNotes('Industrial 4.0')">
+                <button type="button" onclick="showNotes('Industrial 4.0')">
                     Industrial 4.0
                 </button>
 
-                <button onclick="showNotes('Cyber Security')">
+                <button type="button" onclick="showNotes('Cyber Security')">
                     Cyber Security
                 </button>
 
-                <button onclick="showNotes('Data Science')">
+                <button type="button" onclick="showNotes('Data Science')">
                     Data Science
                 </button>
+
             </div>
+
         </section>
 
+        <!-- Available Notes -->
         <section class="notes-section">
+
             <h2>Available Notes</h2>
 
             <input
@@ -54,37 +79,66 @@
             <div id="notesList">
                 <p>Select a subject to view available notes.</p>
             </div>
+
         </section>
 
+        <!-- Upload Notes -->
         <section class="upload-section">
+
             <h2>Upload Study Notes</h2>
 
-            <p>Select a subject first, then choose your PDF file.</p>
+            <p>Select a subject first, then choose your PDF or image file.</p>
 
             <input
                 type="file"
                 id="fileInput"
-                accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp"
+                accept=".pdf,.jpg,.jpeg,.png,.webp"
             >
 
             <button
+                type="button"
                 id="uploadButton"
                 onclick="uploadNotes()"
             >
-                Upload PDF
+                Upload File
             </button>
 
             <p id="uploadStatus"></p>
+
         </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>Student Notes Storage System | Powered by AWS Cloud</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Existing JavaScript -->
+    <script src="./script.js"></script>
+
+    <!-- Register PWA Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function () {
+
+                navigator.serviceWorker.register("./service-worker.js")
+                    .then(function (registration) {
+                        console.log(
+                            "Service Worker registered successfully:",
+                            registration.scope
+                        );
+                    })
+                    .catch(function (error) {
+                        console.error(
+                            "Service Worker registration failed:",
+                            error
+                        );
+                    });
+
+            });
+        }
+    </script>
 
 </body>
 </html>
-

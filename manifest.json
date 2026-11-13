@@ -1,0 +1,21 @@
+
+{
+    "id": "./",
+    "name": "Student Notes Storage System",
+    "short_name": "Student Notes",
+    "description": "Store, search and download study notes using AWS Cloud.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "icons": [
+        {
+            "src": "icons/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
